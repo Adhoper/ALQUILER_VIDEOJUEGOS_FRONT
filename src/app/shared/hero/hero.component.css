@@ -1,0 +1,9 @@
+
+div.hero {
+    padding: 80px 20px; /* Aplica el espacio superior y el padding interno */
+    background: url('/assets/images/joyconsswitch.jpg') no-repeat center;
+    background-size: cover;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    
+  }

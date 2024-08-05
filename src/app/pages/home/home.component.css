@@ -1,0 +1,10 @@
+.section-padding{
+    padding: 50px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-color: #00BFFF;
+}
+
+#juegos .card-body i{
+    font-size: 500px;
+}
