@@ -1,9 +1,20 @@
-
 div.hero {
-    padding: 80px 20px; /* Aplica el espacio superior y el padding interno */
-    background: url('/assets/images/joyconsswitch.jpg') no-repeat center;
-    background-size: cover;
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
-    
-  }
+  position: relative; /* Necesario para el uso de box-shadow y ::before */
+  padding: 80px 20px; /* Aplica el espacio superior y el padding interno */
+  background: url('/assets/images/switchblanca.jpg') no-repeat center;
+  background-size: cover;
+  opacity: 0.7;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Sombra blanca debajo */
+  z-index: 1; /* Asegura que el componente esté por encima del pseudo-elemento ::before */
+}
+
+div.hero::before {
+  background-color: rgba(0, 0, 0, 0.6);
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1; /* Asegura que el pseudo-elemento ::before esté por debajo del componente */
+}

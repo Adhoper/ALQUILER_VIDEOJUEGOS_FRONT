@@ -1,5 +1,6 @@
 .navbar{
-    background-color: #fff;
+    background: rgb(26,248,255);
+    background: linear-gradient(328deg, rgba(26,248,255,1) 17%, rgba(9,76,121,1) 51%, rgba(0,212,255,1) 100%);
     height: 80px;
     margin: 20px;
     border-radius: 16px;
@@ -8,13 +9,13 @@
 
 .navbar-brand {
     font-weight: 500;
-    color: #000; /* Estado inicial */
+    color: #000000; /* Estado inicial */
     font-size: 24px;
     transition: color 0.3s; /* Transición en la propiedad color durante 0.3 segundos */
 }
 
 .navbar-brand:hover {
-    color: #009970; /* Estado final al hacer hover */
+    color: #f62c2c; /* Estado final al hacer hover */
 }
 
 
@@ -54,13 +55,13 @@
 }
 
 .nav-link {
-    color: #666777;
+    color: #ffffff;
     font-weight: 500;
     position: relative;
 }
 
 .nav-link:hover, .nav-link:active{
-    color:#000;
+    color:#000000;
 }
 
 @media (min-width: 991px){
@@ -73,7 +74,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: #009970;
+    background-color: #f62c2c;
     visibility: hidden;
     transition: 0.1s ease-in-out;
 }
