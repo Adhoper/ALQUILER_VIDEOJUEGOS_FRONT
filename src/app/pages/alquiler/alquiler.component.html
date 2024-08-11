@@ -1,2 +1,124 @@
 <app-hero></app-hero>
-<p>alquiler works!</p>
+<section id="alquilar" class="alquilar section-padding">
+  <div class="container">
+    <!-- Encabezado de la sección de alquiler -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center mt-5">
+          <h1 class="text-white">Alquiler</h1>
+          <!-- <p class="text-white">Consulta tus videojuegos alquilados, filtra tus alquileres y gestiona la información de tus alquileres.</p> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Filtros y búsqueda -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="text-white">Buscar Videojuego:</label>
+          <div class="d-flex justify-content-start">
+            <ngx-select-dropdown class="" (change)="selectionChanged($event)" [config]="config" [options]="dropdownOptions" style="width: 300px;"></ngx-select-dropdown>
+            <input class="form-control w-75 ms-2" type="text" placeholder="Buscar por nombre, género, etc.">
+        </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="text-white">Filtrar por Estado:</label>
+          <ngx-select-dropdown class="" (change)="selectionChanged($event)" [config]="config" [options]="dropdownOptions" style="width: 300px;"></ngx-select-dropdown>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lista de videojuegos alquilados -->
+    <div class="row">
+      <!-- Videojuego Alquilado 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card text-white text-center bg-dark pb-2 mt-3">
+          <div class="card-body">
+            <h3 class="card-title">Nombre del Videojuego</h3>
+            <p class="lead">Precio Total: $X.XX</p>
+            <p class="">Fecha de alquiler: DD/MM/YYYY</p>
+            <p class="">Fecha de devolución: DD/MM/YYYY</p>
+            <a href="#" class="btn btn-warning text-dark">Ver Más Detalles</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Videojuego Alquilado 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card text-white text-center bg-dark pb-2 mt-3">
+          <div class="card-body">
+            <h3 class="card-title">Nombre del Videojuego</h3>
+            <p class="lead">Precio por día: $X.XX</p>
+            <p class="text-muted">Fecha de alquiler: DD/MM/YYYY</p>
+            <p class="text-muted">Fecha de devolución: DD/MM/YYYY</p>
+            <a href="#" class="btn btn-warning text-dark">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Videojuego Alquilado 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card text-white text-center bg-dark pb-2 mt-3">
+          <div class="card-body">
+            <h3 class="card-title">Nombre del Videojuego</h3>
+            <p class="lead">Precio por día: $X.XX</p>
+            <p class="text-muted">Fecha de alquiler: DD/MM/YYYY</p>
+            <p class="text-muted">Fecha de devolución: DD/MM/YYYY</p>
+            <a href="#" class="btn btn-warning text-dark">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+
+            <!-- Videojuego Alquilado 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card text-white text-center bg-dark pb-2 mt-3">
+                  <div class="card-body">
+                    <h3 class="card-title">Nombre del Videojuego</h3>
+                    <p class="lead">Precio Total: $X.XX</p>
+                    <p class="">Fecha de alquiler: DD/MM/YYYY</p>
+                    <p class="">Fecha de devolución: DD/MM/YYYY</p>
+                    <a href="#" class="btn btn-warning text-dark">Ver Más Detalles</a>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Videojuego Alquilado 2 -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card text-white text-center bg-dark pb-2 mt-3">
+                  <div class="card-body">
+                    <h3 class="card-title">Nombre del Videojuego</h3>
+                    <p class="lead">Precio por día: $X.XX</p>
+                    <p class="text-muted">Fecha de alquiler: DD/MM/YYYY</p>
+                    <p class="text-muted">Fecha de devolución: DD/MM/YYYY</p>
+                    <a href="#" class="btn btn-warning text-dark">Ver Detalles</a>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Videojuego Alquilado 3 -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card text-white text-center bg-dark pb-2 mt-3">
+                  <div class="card-body">
+                    <h3 class="card-title">Nombre del Videojuego</h3>
+                    <p class="lead">Precio por día: $X.XX</p>
+                    <p class="text-muted">Fecha de alquiler: DD/MM/YYYY</p>
+                    <p class="text-muted">Fecha de devolución: DD/MM/YYYY</p>
+                    <a href="#" class="btn btn-warning text-dark">Ver Detalles</a>
+                  </div>
+                </div>
+              </div>
+    </div>
+
+    <!-- Información adicional -->
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="text-center">
+          <a href="#" class="btn btn-warning">Ver Todos los Alquileres</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
