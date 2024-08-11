@@ -18,7 +18,7 @@ export class AppComponent {
 
     this.router.events.subscribe(() => {
       // Ocultar el header si la ruta es '/login' o cualquier otra ruta de login
-      this.showHeader = !this.router.url.includes('/login');
+      this.showHeader = !this.router.url.includes('/autenticacion');
     });
   }
 
