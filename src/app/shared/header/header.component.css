@@ -47,11 +47,26 @@
 .navbar-toggler {
     border: none;
     font-size: 1.25rem;
+    
+}
+
+@media (max-width: 991px) {
+
+    .offcanvas-header{
+        background: rgb(9,76,121);
+        background: linear-gradient(180deg, rgba(9,76,121,1) 0%, rgba(0,212,255,1) 61%);
+    }
+    
+    .offcanvas-body {
+        background: rgb(9,76,121);
+        background: linear-gradient(0deg, rgba(9,76,121,1) 0%, rgba(0,212,255,1) 61%);
+    }
 }
 
 .navbar-toggler:focus , .btn-close:focus{
     box-shadow: none;
     outline: none;
+    
 }
 
 .nav-link {
