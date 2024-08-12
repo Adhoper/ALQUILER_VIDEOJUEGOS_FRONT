@@ -1,0 +1,51 @@
+<div class="text-center">
+    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+      style="width: 185px;" alt="logo">
+    <h4 class="mt-1 mb-5 pb-1">Adhoper</h4>
+  </div>
+  
+  <form>
+    <p>Registrate</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text"  class="form-control" placeholder="Usuario" />
+              </div>
+        </div>
+        <div class="col-md-6">
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password"  class="form-control" placeholder="Contraseña" />
+              </div>
+        </div>
+        <div class="col-md-12">
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email"  class="form-control" placeholder="Correo" />
+              </div>
+        </div>
+        <div class="col-md-12">
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text"  class="form-control" placeholder="Teléfono" />
+              </div>
+        </div>
+        <div class="col-md-12">
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" class="form-control" placeholder="Dirección" />
+              </div>
+        </div>
+
+    </div>
+
+    <div class="text-center pt-1 mb-5 pb-1">
+      <!-- Botón que ocupa todo el ancho disponible -->
+      <button class="btn btn-primary btn-block w-100 fa-lg gradient-custom-2 mb-3" type="button">Registrate</button>
+      <!-- Enlace de "Forgot password?" debajo del botón -->
+      <!-- <a class="text-muted d-block mt-2" href="#!">¿Ya tienes una cuenta? Inicia Sesión</a> -->
+    </div>
+  
+    <div class="d-flex align-items-center justify-content-center pb-4">
+        <p class="mb-0 me-2">¿Ya tienes una cuenta?</p>
+        <button type="button" (click)="CambiarFormulario()" class="btn btn-outline-danger">Inicia Sesión</button>
+      </div>
+      
+  </form>

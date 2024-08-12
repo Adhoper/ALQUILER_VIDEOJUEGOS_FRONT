@@ -2,15 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   standalone: true,
   imports:[CommonModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']  // Corregir "styleUrl" a "styleUrls"
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css'
 })
-export class LoginComponent implements OnInit {
-
-
+export class RegisterComponent implements OnInit {
   @Input() FormularioActivo: any
   @Output() Mostrar = new EventEmitter<boolean>();
 

@@ -10,8 +10,8 @@ export const routes: Routes = [
         loadComponent: () => import("./pages/alquiler/alquiler.component").then(c => c.AlquilerComponent)
     },
     {
-        path: 'login',
-        loadComponent: () => import("./autenticacion/login/login.component").then(c => c.LoginComponent)
+        path: 'autenticacion',
+        loadComponent: () => import("./autenticacion/autenticacion/autenticacion.component").then(c => c.AutenticacionComponent)
     },
     {
         path: 'home',
