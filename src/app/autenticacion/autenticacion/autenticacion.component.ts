@@ -25,7 +25,7 @@ export class AutenticacionComponent implements OnInit {
 
   CambiarFormulario(ev:boolean){
 
-    console.log(ev);
+    //console.log(ev);
 
     this.MostrarLogin = ev
     
