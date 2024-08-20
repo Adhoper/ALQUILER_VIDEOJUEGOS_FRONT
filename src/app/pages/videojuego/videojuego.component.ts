@@ -3,11 +3,13 @@ import { HeroComponent } from "../../shared/hero/hero.component";
 import { SharedModule } from '../../shared/shared.module';
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-videojuego',
   standalone: true,
-  imports: [HeroComponent,SelectDropDownModule,FormsModule],
+  imports: [HeroComponent,SharedModule,RouterOutlet],
   templateUrl: './videojuego.component.html',
   styleUrl: './videojuego.component.css'
 })

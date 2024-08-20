@@ -2,16 +2,23 @@ import { Component } from '@angular/core';
 import { HeroComponent } from "../../shared/hero/hero.component";
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatDialog } from '@angular/material/dialog';
+import { SharedModule } from '../../shared/shared.module';
+import { AlquilerDetalleComponent } from './alquiler-detalle/alquiler-detalle.component';
 
 @Component({
   selector: 'app-alquiler',
   standalone: true,
-  imports: [HeroComponent,HeroComponent,SelectDropDownModule,NgxPaginationModule],
+  imports: [HeroComponent,HeroComponent,SharedModule],
   templateUrl: './alquiler.component.html',
   styleUrl: './alquiler.component.css'
 })
 export class AlquilerComponent {
   dropdownOptions: any
+
+  constructor(private matDialog: MatDialog ) {
+    
+  }
 
 
   ngOnInit(): void {
@@ -25,6 +32,14 @@ export class AlquilerComponent {
         name: "Categoría"
       }
     ]
+  }
+
+
+  OpenDialog(){
+    this.matDialog.open(AlquilerDetalleComponent, {
+      width: '250px',
+      data: { /* puedes pasar datos aquí si es necesario */ }
+    });
   }
 
   selectionChanged(ev:any){

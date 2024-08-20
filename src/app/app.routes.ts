@@ -1,13 +1,15 @@
 import { Routes } from '@angular/router';
+import { videojuegoRoutes } from './pages/videojuego/videojuego.routes';
+import { pagosRoutes } from './pago/pagos/pagos.routes';
 
 export const routes: Routes = [
-    {
-        path: 'videojuego',
-        loadComponent: () => import("./pages/videojuego/videojuego.component").then(c => c.VideojuegoComponent)
-    },
+
+    ...videojuegoRoutes,
+    ...pagosRoutes,
     {
         path: 'alquiler',
         loadComponent: () => import("./pages/alquiler/alquiler.component").then(c => c.AlquilerComponent)
+
     },
     {
         path: 'autenticacion',
