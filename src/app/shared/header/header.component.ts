@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
     componenteActivo: any;
 
-    constructor(private router: Router) {}
+    constructor(public router: Router) {}
 
     ngOnInit(): void {
         //console.log(this.router.config);

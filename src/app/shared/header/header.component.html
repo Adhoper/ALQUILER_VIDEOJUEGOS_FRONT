@@ -10,16 +10,24 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" [routerLink]="'/home'" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+            <a class="nav-link mx-lg-2" 
+               [routerLink]="'/home'" 
+               [ngClass]="{'active': router.url === '/home'}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" [routerLink]="'/videojuego'" routerLinkActive="active">VideoJuegos</a>
+            <a class="nav-link mx-lg-2" 
+               [routerLink]="'/videojuego'" 
+               [ngClass]="{'active': router.url.startsWith('/videojuego')}">VideoJuegos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" [routerLink]="'/alquiler'" routerLinkActive="active">Alquiler</a>
+            <a class="nav-link mx-lg-2" 
+               [routerLink]="'/alquiler'" 
+               [ngClass]="{'active': router.url === '/alquiler'}">Alquiler</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" [routerLink]="'/configuracion'" routerLinkActive="active">Configuracion</a>
+            <a class="nav-link mx-lg-2" 
+               [routerLink]="'/configuracion'" 
+               [ngClass]="{'active': router.url === '/configuracion'}">Configuracion</a>
           </li>
         </ul>
       </div>
@@ -31,6 +39,7 @@
     </button>
   </div>
 </nav>
+
 
 <!-- End Navbar -->
 

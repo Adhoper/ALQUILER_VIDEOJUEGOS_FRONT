@@ -15,6 +15,29 @@ export class AutenticacionComponent implements OnInit {
 
   MostrarLogin:boolean = true
 
+  signupUsers: any[] =[];
+  signupObj: any = {
+    nombre: '',
+    apellido: '',
+    usuario: '',
+    contrasena: '',
+    correo: '',
+    telefono: '',
+    direccion: ''
+
+  }
+
+  loginObj: any = {
+    nombre: '',
+    apellido: '',
+    usuario: '',
+    contrasena: '',
+    correo: '',
+    telefono: '',
+    direccion: ''
+
+  }
+
   constructor() {
     
   }

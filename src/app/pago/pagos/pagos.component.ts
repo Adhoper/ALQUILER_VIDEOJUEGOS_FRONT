@@ -26,7 +26,7 @@ export class PagosComponent {
       showConfirmButton: false,
       timer: 6000,
       willClose: () => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/videojuego']);
       }
     });
     

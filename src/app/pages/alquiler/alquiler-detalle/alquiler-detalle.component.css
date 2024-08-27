@@ -1,0 +1,8 @@
+.gradient{
+    background: rgb(26,248,255);
+    background: linear-gradient(328deg, rgba(26,248,255,1) 17%, rgba(9,76,121,1) 51%, rgba(0,212,255,1) 100%);
+}
+
+.modal-body{
+    background-color: #222222;
+}
