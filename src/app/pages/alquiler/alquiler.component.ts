@@ -37,7 +37,7 @@ export class AlquilerComponent {
 
   OpenDialog(){
     this.matDialog.open(AlquilerDetalleComponent, {
-      width: '250px',
+      width: '800px',
       data: { /* puedes pasar datos aquí si es necesario */ }
     });
   }

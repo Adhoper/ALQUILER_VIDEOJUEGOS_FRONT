@@ -10,7 +10,7 @@ export const videojuegoRoutes: Routes = [
 
   },
   {
-    path: 'detalle-alquiler',
+    path: 'videojuego-detalle-alquiler',
     loadComponent: () => import("./detalle-alquiler/detalle-alquiler.component").then(c => c.DetalleAlquilerComponent)
 
   }

@@ -1,23 +1,19 @@
-<div class="text-center">
-  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-    style="width: 185px;" alt="logo">
-  <h4 class="mt-1 mb-5 pb-1">Adhoper</h4>
-</div>
 
-<form>
+
+<form [formGroup]="loginForm">
   <p>Por favor Inicia Sesión</p>
 
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="email" class="form-control" placeholder="Usuario" />
+    <input type="email" class="form-control" placeholder="Usuario" formControlName="usuario" />
   </div>
 
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="password" class="form-control" placeholder="Contraseña" />
+    <input type="password" class="form-control" placeholder="Contraseña" formControlName="password" />
   </div>
 
   <div class="text-center pt-1 mb-5 pb-1">
     <!-- Botón que ocupa todo el ancho disponible -->
-    <button class="btn btn-primary btn-block w-100 fa-lg gradient-custom-2 mb-3" type="button">Iniciar Sesión</button>
+    <button [disabled]="!loginForm.valid" class="btn btn-primary btn-block w-100 fa-lg gradient-custom-2 mb-3" type="button" (click)="onSubmit()">Iniciar Sesión</button>
     <!-- Enlace de "Forgot password?" debajo del botón -->
     <a class="text-muted d-block mt-2" href="#!">¿Olvidaste tu contraseña?</a>
   </div>

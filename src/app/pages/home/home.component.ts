@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { HeroSectionComponent } from '../../shared/hero-section/hero-section.component';
 import { SharedModule } from '../../shared/shared.module';
 
@@ -9,12 +9,16 @@ import { SharedModule } from '../../shared/shared.module';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
+  ngAfterViewInit(): void {
+    //window.scrollTo(0, 0);
+  }
+
   ngOnInit(): void {
-    //console.log("entre yo");
+    //window.scrollTo(0, 0);
   }
 
 }

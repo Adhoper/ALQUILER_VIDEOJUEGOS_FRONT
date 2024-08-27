@@ -5,6 +5,7 @@ import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { VideojuegoService } from '../../services/videojuego.service';
 
 @Component({
   selector: 'app-videojuego',
@@ -17,12 +18,19 @@ export class VideojuegoComponent implements OnInit {
 
   dropdownOptions:any;
 
-  constructor() {
+  constructor(private videojuegoService: VideojuegoService) {
     
     
   }
 
   ngOnInit(): void {
+
+
+    this.videojuegoService.ObtenerVideojuegos().subscribe((res:any)=>{
+
+      console.log(res);
+    })
+
     this.dropdownOptions = [
       {
         id: 1,
