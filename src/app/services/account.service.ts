@@ -9,7 +9,11 @@ export class AccountService {
 
   constructor(private http:HttpClient) { }
 
-  OnLogin(obj:any) : Observable<any>{
+  Loguearse(obj:any) : Observable<any>{
     return this.http.post('https://localhost:7043/api/Autenticacion/ValidarAutenticacion', obj);
+  }
+
+  Registrarse(obj:any) : Observable<any>{
+    return this.http.post('https://localhost:7043/api/Usuario/set-usuario', obj);
   }
 }

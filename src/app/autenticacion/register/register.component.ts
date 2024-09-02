@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
@@ -10,9 +10,11 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnChanges {
   @Input() FormularioActivo: any
+  @Input() SuccessfullRegister:any
   @Output() Mostrar = new EventEmitter<boolean>();
+  @Output() RegisterForm = new EventEmitter<boolean>();
   registerForm: FormGroup;
 
 
@@ -24,10 +26,14 @@ export class RegisterComponent implements OnInit {
       apellido: ['', [Validators.required]],
       usuario: ['', [Validators.required]],
       password: ['', [Validators.required]],
+      passwordEqual: ['', [Validators.required]],
       correo: ['', [Validators.required, Validators.email]],
       telefono: ['', [Validators.required]],
       direccion: ['', [Validators.required]]
     }); 
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.SuccessfullRegister);
   }
 
   ngOnInit(): void {
@@ -47,10 +53,7 @@ export class RegisterComponent implements OnInit {
 
     console.log(this.registerForm.valid);
     if (this.registerForm.valid) {
-
-      console.log(this.registerForm.value);
-      console.log(this.registerForm.get('nombre')?.value);
-
+      this.RegisterForm.emit(this.registerForm.value)
 
     }
   }

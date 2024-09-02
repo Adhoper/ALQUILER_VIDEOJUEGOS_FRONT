@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 
@@ -14,30 +14,35 @@ export class LoginComponent implements OnInit {
 
 
   @Input() FormularioActivo: any
+  @Input() SuccessfullLogin:any
   @Output() Mostrar = new EventEmitter<boolean>();
+  @Output() LoginForm = new EventEmitter<boolean>();
   loginForm: FormGroup;
+  falso: any;
+  mensaje: any;
 
   constructor(private fb: FormBuilder) {
 
     this.loginForm = this.fb.group({
-      usuario: ['', [Validators.required, this.customEmailOrUsernameValidator()]],
-      password: ['', [Validators.required]]
+      identificadorUsuario: ['', [Validators.required, this.customEmailOrUsernameValidator()]],
+      contrasena: ['', [Validators.required]]
     });
 
   }
 
   ngOnInit(): void {
-   
+   //console.log(this.SuccessfullLogin);
 
   }
 
   onSubmit(): void {
 
 
-    console.log(this.loginForm.valid);
+    //console.log(this.loginForm.valid);
     if (this.loginForm.valid) {
-
-      console.log(this.loginForm.value);
+      
+      //console.log(this.loginForm.value);
+      this.LoginForm.emit(this.loginForm.value);
 
 
     }
@@ -69,6 +74,12 @@ export class LoginComponent implements OnInit {
         return !usernamePattern.test(value) ? { 'invalidUsername': true } : null;
       }
     };
+  }
+
+  validator(campo: string) {
+    return (
+      this.loginForm.controls[campo]?.errors && this.loginForm.controls[campo]?.touched
+    );
   }
   
 }

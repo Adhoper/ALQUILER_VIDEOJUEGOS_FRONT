@@ -1,10 +1,10 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <a class="navbar-brand me-auto" [routerLink]="'/home'">Logo</a>
+    <a class="navbar-brand me-auto" [routerLink]="'/home'"><img src="assets/images/Logo.png" style="width: 50px;"/></a>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+        <img src="assets/images/Logo.png" style="width: 50px;"/>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -12,39 +12,50 @@
           <li class="nav-item">
             <a class="nav-link mx-lg-2" 
                [routerLink]="'/home'" 
-               [ngClass]="{'active': router.url === '/home'}">Inicio</a>
+               [ngClass]="{'active': router.url === '/home'}"
+               data-bs-dismiss="offcanvas">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" 
                [routerLink]="'/videojuego'" 
-               [ngClass]="{'active': router.url.startsWith('/videojuego')}">VideoJuegos</a>
+               [ngClass]="{'active': router.url.startsWith('/videojuego')}"
+               data-bs-dismiss="offcanvas">VideoJuegos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" 
                [routerLink]="'/alquiler'" 
-               [ngClass]="{'active': router.url === '/alquiler'}">Alquiler</a>
+               [ngClass]="{'active': router.url === '/alquiler'}"
+               data-bs-dismiss="offcanvas">Alquiler</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" 
                [routerLink]="'/configuracion'" 
-               [ngClass]="{'active': router.url === '/configuracion'}">Configuracion</a>
+               [ngClass]="{'active': router.url === '/configuracion'}"
+               data-bs-dismiss="offcanvas">Configuracion</a>
           </li>
         </ul>
       </div>
     </div>
-    <a [routerLink]="'/autenticacion'" class="login-button">Iniciar Sesión</a>
-    <a href="#" class="register-button">Registrarse</a>
+    
+    <!-- Show login and register buttons if not logged in -->
+    <ng-container *ngIf="!isLoggedIn">
+      <a [routerLink]="'/autenticacion'" (click)="RegisterOrLogin(true)" class="login-button">Iniciar Sesión</a>
+      <a [routerLink]="'/autenticacion'" (click)="RegisterOrLogin(false)" class="register-button">Registrarse</a>
+    </ng-container>
+
+    <!-- Show username and logout button if logged in -->
+    <ng-container *ngIf="isLoggedIn">
+      <a [routerLink]="'/perfil'" class="username text-black">{{ capitalizeFirstLetter(this.user) }}</a>
+      <button (click)="logout()" class="logout-button border-0">Cerrar Sesión</button>
+    </ng-container>
+    
     <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
 </nav>
-
-
 <!-- End Navbar -->
 
 <!-- Heroe section -->
-
 <app-hero-section *ngIf="componenteActivo==='home'"></app-hero-section>
-
 <!-- End Heroe section -->
