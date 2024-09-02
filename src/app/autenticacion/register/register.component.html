@@ -17,21 +17,34 @@
     <div class="col-md-6">
       <div data-mdb-input-init class="form-outline mb-4">
           <input type="text"  class="form-control" placeholder="Usuario" formControlName="usuario" />
-        </div>
+          <span
+          *ngIf="SuccessfullRegister?.successful === 'EXISTENTE'"
+          class="form-text text-danger">
+          {{SuccessfullRegister?.message}}</span>
+      </div>
   </div>
         <div class="col-md-6">
             <div data-mdb-input-init class="form-outline mb-4">
-                <input type="password"  class="form-control" placeholder="Contraseña" formControlName="password" />
-              </div>
-        </div>
-        <div class="col-md-12">
-            <div data-mdb-input-init class="form-outline mb-4">
                 <input type="email"  class="form-control" placeholder="Correo" formControlName="correo" />
+                <span
+                *ngIf="SuccessfullRegister?.successful === 'EXISTENTE'"
+                class="form-text text-danger">
+                {{SuccessfullRegister?.message}}</span>
               </div>
         </div>
         <div class="col-md-12">
+          <div data-mdb-input-init class="form-outline mb-4">
+              <input type="password"  class="form-control" placeholder="Contraseña" formControlName="password" />
+            </div>
+      </div>
+      <div class="col-md-12">
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="password"  class="form-control" placeholder="Confirme la Contraseña" formControlName="passwordEqual" />
+          </div>
+    </div>
+        <div class="col-md-12">
             <div data-mdb-input-init class="form-outline mb-4">
-                <input type="text"  class="form-control" placeholder="Teléfono" formControlName="telefono" />
+                <input type="text" [mask]="'(000) 000-0000'"   class="form-control" placeholder="Teléfono" formControlName="telefono" />
               </div>
         </div>
         <div class="col-md-12">

@@ -8,6 +8,7 @@ export class VideojuegoService {
 
 
   RUTA = 'api/VideoJuego/'
+  RUTA1 = 'api/Alquiler/'
   BASE_API = 'https://localhost:7043/'
 
   constructor(private http: HttpClient) { }
@@ -25,6 +26,10 @@ export class VideojuegoService {
 
   ObtenerVideojuegos() {
     return this.getQuerys(`${this.RUTA}get-all-videogames`);
+  }
+
+  ObtenerAlquileres() {
+    return this.getQuerys(`${this.RUTA1}get-all-alquileres`);
   }
 
   // setPublicarCalificacion(param: any) {

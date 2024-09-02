@@ -22,7 +22,7 @@
     color: #f62c2c;
 }
 
-.login-button, .register-button {
+.login-button, .register-button, .logout-button {
     background-color: #009970;
     color: #fff;
     font-size: 14px;
@@ -36,6 +36,15 @@
 .register-button {
     background-color: #32b9f8;
     margin-left: 10px;
+}
+
+.logout-button{
+    background-color: #f62c2c;
+}
+
+.logout-button:hover{
+    background-color: #fff;
+    color: #000000;
 }
 
 .login-button:hover {
@@ -95,7 +104,7 @@
         font-size: 20px;
     }
 
-    .login-button, .register-button {
+    .login-button, .register-button, .logout-button {
         padding: 6px 15px; /* Reducir padding para pantallas pequeñas */
         margin: 0 5px;
         font-size: 12px;
